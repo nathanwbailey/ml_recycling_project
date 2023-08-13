@@ -27,7 +27,9 @@ def train_network(model, num_epochs, optimizer, loss_function, trainloader, vali
             labels = batch[1].to(device)
             outputs = model(images)
             loss = loss_function(outputs, labels)
+            #Calculate the gradients for parameters (backprop)
             loss.backward()
+            #Update the values of the parameter using the optimizer
             optimizer.step()
             train_loss.append(loss.item())
             num_corr, num_ex = calculate_accuracy(outputs, labels)
@@ -76,7 +78,7 @@ def train_network(model, num_epochs, optimizer, loss_function, trainloader, vali
     return model
 
 
-def test(model, testloader, loss_function, device):
+def test_network(model, testloader, loss_function, device):
     test_loss = []
     num_examples = 0
     num_correct = 0
