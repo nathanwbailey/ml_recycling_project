@@ -15,8 +15,8 @@ train_dataset = dataset.RecyclingDataset(data_dir='compiled_dataset', dataset_ty
 trainloader = torch.utils.data.DataLoader(train_dataset, batch_size=32, shuffle=False, pin_memory=True)
 
 
-mean = torch.Tensor([0.6662, 0.6211, 0.5492]).to('cpu')
-std = torch.Tensor([0.2864, 0.2910, 0.3304]).to('cpu')
+mean = torch.Tensor([0.6661, 0.6211, 0.5492]).to('cpu')
+std = torch.Tensor([0.2871, 0.2917, 0.3310]).to('cpu')
 
 mean = torch.zeros(3).to(device)
 std = torch.zeros(3).to(device)

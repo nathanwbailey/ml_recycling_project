@@ -1,0 +1,19 @@
+{"entries":
+    [
+        {"council": "Cambridge City Council",
+        "Recyclable": ["paper", "cardboard", "glass", "plastic", "metal"],
+        "Non-Recyclable": [""],
+        "Organics": true
+        },
+        {"council": "Coventry City Council",
+        "Recyclable": ["paper", "cardboard", "glass", "plastic", "metal"],
+        "Non-Recyclable": [""],
+        "Organics": true
+        },
+        {"council": "Wokingham Borough Council",
+        "Recyclable": ["paper", "cardboard", "plastic", "metal"],
+        "Non-Recyclable": ["glass"],
+        "Organics": true
+        }
+    ]
+}
