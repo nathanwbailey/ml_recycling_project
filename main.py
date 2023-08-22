@@ -2,7 +2,7 @@ import torch
 import torchvision
 import sys
 import dataset
-import network
+from network_mobilenetv2 import RecycleNetwork
 import train_test
 
 
@@ -45,7 +45,7 @@ validloader = torch.utils.data.DataLoader(valid_dataset, batch_size=32, shuffle=
 test_dataset = dataset.RecyclingDataset(data_dir='compiled_dataset', dataset_type='test', data_transforms=transforms)
 testloader = torch.utils.data.DataLoader(test_dataset, batch_size=32, shuffle=False, pin_memory=True)
 
-model = network.RecycleNetwork(num_classes=5).to(device)
+model = RecycleNetwork(num_classes=5).to(device)
 #Loss function, optimizer, scheduler
 loss = torch.nn.CrossEntropyLoss()
 optimizer = torch.optim.SGD(filter(lambda param: param.requires_grad, model.parameters()), lr=0.0001, momentum=0.9, weight_decay=5e-2)
