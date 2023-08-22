@@ -2,7 +2,7 @@ import torch
 import torchvision
 import sys
 import dataset
-from network_mobilenetv2 import RecycleNetwork
+from network import RecycleNetwork
 import train_test
 
 

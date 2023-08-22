@@ -1,12 +1,16 @@
 import torch
 import torchvision
+import sys
+sys.path.append('./EfficientNet')
+from efficientnet_lite import *
 
 class RecycleNetwork(torch.nn.Module):
     def __init__(self, num_classes) -> None:
         super().__init__()
-        self.backbone = torchvision.models.mobilenet_v3_small(weights='DEFAULT')
-        self.backbone.classifier[3] = torch.nn.Linear(1024, num_classes)
+        model_name = 'efficientnet_lite4'
+        self.backbone = build_efficientnet_lite(model_name, 1000)
+        self.backbone.load_pretrain('./EfficientNet/efficientnet_lite4.pth')
+        self.backbone.fc = torch.nn.Linear(1280, 5)
     
     def forward(self, x):
         return self.backbone(x)
-
