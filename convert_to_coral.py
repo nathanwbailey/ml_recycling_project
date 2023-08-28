@@ -6,7 +6,14 @@ from pytorch2keras.converter import pytorch_to_keras
 import tensorflow as tf
 import pytorch_model_summary as pms
 import tensorflow.lite as tflite
-import network
+from network import RecycleNetwork
+
+class Identity(torch.nn.Module):
+    def __init__(self):
+        super().__init__()
+    def forward(self, x):
+        return x
+
 
 #https://github.com/joaopauloschuler/neural-api/issues/67
 class HardSigmoidTorch(torch.nn.Module):
@@ -24,19 +31,14 @@ class HardSwishTorch(torch.nn.Module):
     def forward(self, x):
         return torch.mul(self.sigmoid(x), x)
     
-class RecycleNetwork(torch.nn.Module):
-    def __init__(self, num_classes) -> None:
-        super().__init__()
-        self.backbone = torchvision.models.mobilenet_v2(weights='DEFAULT')
-        #self.backbone.classifier[3] = torch.nn.Linear(1024, num_classes)
-    
-    def forward(self, x):
-        return self.backbone(x)
+
 
 input_test = torch.rand(1, 3, 150, 150)
 model = RecycleNetwork(5)
+model.backbone.dropout = Identity()
 model.eval()
 print(model)
+print(model(torch.rand(32,3,150,150)))
 def replace_hardswish(model):
     for layer in model.named_children():
         if isinstance(layer[1], torch.nn.Hardswish):
@@ -55,7 +57,9 @@ def representative_data_gen():
 
 replace_hardswish(model)
 # print(model)
-# print(model(torch.rand(1,3,150,150)))
+
+
+
 model = pytorch_to_keras(model, input_test, [(3, 150,150)], verbose=False, change_ordering=True,  name_policy='renumerate')
 model.summary()
 # model.input.set_shape((1,) + model.input.shape[1:])
