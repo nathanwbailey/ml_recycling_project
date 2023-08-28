@@ -6,6 +6,7 @@ from early import pytorchtools
 def calculate_accuracy(outputs, ground_truth):
     softmaxed_output = torch.nn.functional.softmax(outputs, dim=1)
     predictions = torch.argmax(softmaxed_output, dim=1)
+    ground_truth = torch.argmax(ground_truth, dim=1)
     num_correct = torch.sum(torch.eq(predictions, ground_truth)).item()
     return num_correct, ground_truth.size(0)
 

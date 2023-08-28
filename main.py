@@ -5,6 +5,7 @@ import dataset
 from network import RecycleNetwork
 import train_test
 from torch.utils.data import default_collate
+import torchvision.transforms.v2 as T
 
 NUM_CLASSES=5
 
