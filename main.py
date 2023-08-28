@@ -61,15 +61,15 @@ train_dataset_augmented_5 = dataset.RecyclingDataset(data_dir='compiled_dataset'
 
 train_dataset = torch.utils.data.ConcatDataset([train_dataset, train_dataset_augmented_1, train_dataset_augmented_2, train_dataset_augmented_3, train_dataset_augmented_4, train_dataset_augmented_5])
 
-trainloader = torch.utils.data.DataLoader(train_dataset, batch_size=32, shuffle=True, pin_memory=True)
+trainloader = torch.utils.data.DataLoader(train_dataset, batch_size=32, shuffle=True, pin_memory=True, num_workers=4)
 
 print(len(trainloader))
 
 valid_dataset = dataset.RecyclingDataset(data_dir='compiled_dataset', dataset_type='valid', data_transforms=transforms)
-validloader = torch.utils.data.DataLoader(valid_dataset, batch_size=32, shuffle=False, pin_memory=True)
+validloader = torch.utils.data.DataLoader(valid_dataset, batch_size=32, shuffle=False, pin_memory=True, num_workers=4)
 
 test_dataset = dataset.RecyclingDataset(data_dir='compiled_dataset', dataset_type='test', data_transforms=transforms)
-testloader = torch.utils.data.DataLoader(test_dataset, batch_size=32, shuffle=False, pin_memory=True)
+testloader = torch.utils.data.DataLoader(test_dataset, batch_size=32, shuffle=False, pin_memory=True, num_workers=4)
 
 model = RecycleNetwork(num_classes=5).to(device)
 #Loss function, optimizer, scheduler
