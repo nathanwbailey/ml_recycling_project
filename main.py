@@ -58,7 +58,7 @@ testloader = torch.utils.data.DataLoader(test_dataset, batch_size=32, shuffle=Fa
 model = RecycleNetwork(num_classes=NUM_CLASSES).to(device)
 #Loss function, optimizer, scheduler
 loss = torch.nn.CrossEntropyLoss()
-optimizer = torch.optim.SGD(filter(lambda param: param.requires_grad, model.parameters()), lr=0.0001, momentum=0.9, weight_decay=5e-2)
+optimizer = torch.optim.SGD(filter(lambda param: param.requires_grad, model.parameters()), lr=0.000001, momentum=0.9, weight_decay=5e-2)
 
 scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer=optimizer, factor=0.1, mode='min', patience=3, min_lr=0.0000000000001, threshold_mode='abs', threshold=1e-2, verbose=True)
 
