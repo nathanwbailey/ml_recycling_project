@@ -10,6 +10,13 @@ def calculate_accuracy(outputs, ground_truth):
     num_correct = torch.sum(torch.eq(predictions, ground_truth)).item()
     return num_correct, ground_truth.size(0)
 
+
+def calculate_accuracy_val(outputs, ground_truth):
+    softmaxed_output = torch.nn.functional.softmax(outputs, dim=1)
+    predictions = torch.argmax(softmaxed_output, dim=1)
+    num_correct = torch.sum(torch.eq(predictions, ground_truth)).item()
+    return num_correct, ground_truth.size(0)
+
 def train_network(model, num_epochs, optimizer, loss_function, trainloader, validloader, device, patience=10, path_to_model='recycle_net', scheduler=None):
     print('Training Started')
     sys.stdout.flush()
@@ -45,7 +52,7 @@ def train_network(model, num_epochs, optimizer, loss_function, trainloader, vali
                 outputs = model(images)
                 loss = loss_function(outputs, labels)
                 valid_loss.append(loss.item())
-                num_corr, num_ex = calculate_accuracy(outputs, labels)
+                num_corr, num_ex = calculate_accuracy_val(outputs, labels)
                 num_examples_valid += num_ex
                 num_correct_valid += num_corr
                 
@@ -91,7 +98,7 @@ def test_network(model, testloader, loss_function, device):
             output = model(images)
             loss = loss_function(output, labels)
             test_loss.append(loss.item())
-            num_corr, num_ex = calculate_accuracy(output, labels)
+            num_corr, num_ex = calculate_accuracy_val(output, labels)
             num_examples += num_ex
             num_correct += num_corr
 
