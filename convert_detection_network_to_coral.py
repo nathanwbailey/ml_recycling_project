@@ -31,8 +31,10 @@ def representative_data_gen():
 
 
 model = pytorch_to_keras(model, input_test, [(3,150,150)], verbose=False, change_ordering=True,  name_policy='renumerate')
-model.summary()
-# model.input.set_shape((1,) + model.input.shape[1:])
+model.summary()#
+print(model.input_shape)
+model.input.set_shape((1,) + model.input.shape[1:])
+print(model.input_shape)
 converter = tf.lite.TFLiteConverter.from_keras_model(model)
 converter.optimizations = [tf.lite.Optimize.DEFAULT]
 converter.representative_dataset = tf.lite.RepresentativeDataset(representative_data_gen)

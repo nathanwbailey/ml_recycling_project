@@ -61,7 +61,7 @@ replace_hardswish(model)
 
 model = pytorch_to_keras(model, input_test, [(3, 150,150)], verbose=False, change_ordering=True,  name_policy='renumerate')
 model.summary()
-# model.input.set_shape((1,) + model.input.shape[1:])
+model.input.set_shape((1,) + model.input.shape[1:])
 
 
 converter = tf.lite.TFLiteConverter.from_keras_model(model)
