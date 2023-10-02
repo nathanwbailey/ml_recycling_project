@@ -54,11 +54,16 @@ def train_network(model, device, epochs):
         param.requires_grad=True
     
     loss = torch.nn.CrossEntropyLoss()
+
+    #optimizer = torch.optim.SGD(filter(lambda param: param.requires_grad, model.parameters()), lr=0.0000001, momentum=0.9, weight_decay=5e-2)
     optimizer = torch.optim.SGD(filter(lambda param: param.requires_grad, model.parameters()), lr=0.00001, momentum=0.9, weight_decay=5e-2)
+
+    #scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer=optimizer, factor=0.1, mode='min', patience=3, min_lr=0.00000000000001, threshold_mode='abs', threshold=1e-2, verbose=True)
+
 
     scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer=optimizer, factor=0.1, mode='min', patience=3, min_lr=0.00000000001, threshold_mode='abs', threshold=1e-2, verbose=True)
 
-    model = train_test.train_network(model=model, num_epochs=epochs, optimizer=optimizer, loss_function=loss, trainloader=trainloader, validloader=validloader, device=device, scheduler=scheduler)
+    model = train_test.train_network(model=model, num_epochs=epochs, optimizer=optimizer, loss_function=loss, trainloader=trainloader, validloader=validloader, device=device, scheduler=scheduler, patience=20)
     return model
 
 
@@ -68,16 +73,20 @@ model = RecycleNetwork(num_classes=5)
 model.load_state_dict(torch.load('recycle_net_trained.pt'))
 model.train()
 
-
-num_to_prune=0.2
+#11 prunes
+num_to_prune=0.10
 DG = pruning.DependencyGraph()
 DG.build_dependency(model, example_inputs=torch.randn(1,3,150,150))
 model.to(device)
 num_conv_layers_pruned = 0
 train_model=True
+num_prunes = 0
+print(model)
 for idx, (name,layer) in enumerate(model.named_modules()):
     if isinstance(layer, torch.nn.Conv2d):
         num_conv_layers_pruned +=1
+        # if num_conv_layers_pruned <= 12*3:
+        #     continue
         train_model=True
         prune_idx = torch.argsort(torch.sum(torch.abs(layer.weight.data), dim=(1,2,3))).tolist()
         num = math.ceil(len(prune_idx)*num_to_prune)
@@ -91,6 +100,7 @@ for idx, (name,layer) in enumerate(model.named_modules()):
             group = DG.get_pruning_group(layer, pruning_fn=pruning.prune_conv_out_channels, idxs=prune_idx)
             if DG.check_pruning_group(group):
                 group.prune()
+        print(group)
     if num_conv_layers_pruned % 3 == 0 and num_conv_layers_pruned != 0 and train_model:
         if num_conv_layers_pruned == 3:
             train_model=False
@@ -100,10 +110,6 @@ for idx, (name,layer) in enumerate(model.named_modules()):
         train_network(model, device=device, epochs=100)
         print('Ended Training Cycle')
         train_model=False
-        
-
-
-
 
 test_dataset = dataset.RecyclingDataset(data_dir='compiled_dataset', dataset_type='test', data_transforms=transforms)
 testloader = torch.utils.data.DataLoader(test_dataset, batch_size=32, shuffle=False, pin_memory=True, num_workers=4)
