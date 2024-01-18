@@ -12,6 +12,8 @@ PlotNeuralNet/*
 recycling_video2.mp4
 train_data.npz
 collected_dataset*
+collected_dataset_hand/*
+collected_dataset_hand*
 dataset_collection*
 dataset*
 augment_image*
