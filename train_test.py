@@ -52,7 +52,7 @@ def train_network(model, num_epochs, optimizer, loss_function, trainloader, vali
         print('Epoch: {}, Training Loss: {:4f}, Validation Loss: {:4f}, Training Accuracy: {:4f}, Validation Accuracy: {:4f}'.format(epoch, np.mean(train_loss), np.mean(valid_loss), num_correct_train/num_examples_train, num_correct_valid/num_examples_valid))
         
         if scheduler:
-            scheduler.step(np.mean(train_loss))
+            scheduler.step(np.mean(valid_loss))
         
         if early_stop.counter == 0:
             torch.save({
@@ -65,7 +65,7 @@ def train_network(model, num_epochs, optimizer, loss_function, trainloader, vali
                 }, 'full_model.tar')
             torch.save(model, 'model.pth')
         
-        early_stop_loss = np.mean(train_loss)
+        early_stop_loss = np.mean(valid_loss)
         early_stop(early_stop_loss, model)
         
         if early_stop.early_stop:
