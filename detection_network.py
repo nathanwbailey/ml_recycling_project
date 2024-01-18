@@ -1,5 +1,7 @@
 from torch import nn
 import torch
+import pytorch_model_summary as pms
+
 
 
 class DetectionNetwork(nn.Module):
@@ -39,7 +41,5 @@ class DetectionNetwork(nn.Module):
 
 
 #Test the Network
-# network = DetectionNetwork()
-# network.eval()
-# input_test = torch.rand(5, 3, 150, 150)
-# print(network(input_test).size())
+model = DetectionNetwork()
+pms.summary(model, torch.zeros((1, 3, 150,150)), show_input=False, print_summary=True, max_depth=5, show_parent_layers=True)

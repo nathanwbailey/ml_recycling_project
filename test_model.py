@@ -1,8 +1,8 @@
 import torch
 import torchvision
 import sys
-import dataset_collected
 import dataset
+
 import network
 from PIL import Image
 
@@ -25,8 +25,7 @@ model = network.RecycleNetwork(num_classes=5).to(device)
 model.load_state_dict(torch.load('recycle_net_trained.pt'))
 model.eval()
 
-dataset_to_use = dataset_collected.RecyclingDataset(data_dir='collected_dataset_with_labels', dataset_type='train', data_transforms=transforms)
-# dataset_to_use = dataset.RecyclingDataset(data_dir='compiled_dataset', dataset_type='test', data_transforms=transforms)
+dataset_to_use = dataset.RecyclingDataset(data_dir='compiled_dataset', dataset_type='test', data_transforms=transforms)
 
 testloader = torch.utils.data.DataLoader(dataset_to_use, batch_size=32, shuffle=False, pin_memory=True, num_workers=4)
 
@@ -42,8 +41,5 @@ with torch.no_grad():
         num_corr, num_ex = calculate_accuracy(output, labels)
         num_examples += num_ex
         num_correct += num_corr
-        print(num_corr)
-        print(num_ex)
-        print(num_corr/num_ex)
-        print(labels)
-        print(predictions)
+
+print('Test Accuracy: {:.4f}'.format(num_correct/num_examples))

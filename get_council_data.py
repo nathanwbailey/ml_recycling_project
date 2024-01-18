@@ -14,6 +14,7 @@ def get_council_data(postcode):
     response = requests.request("POST", url, headers=headers, data=payload, files=files)
 
     soup = BeautifulSoup(response.text, 'html.parser' )
+    print(soup)
     data = None
     if soup.find_all("div", {"class": "district-result group"}):
         res = soup.find_all("div", {"class": "district-result group"})
@@ -22,7 +23,6 @@ def get_council_data(postcode):
     elif soup.find_all("div", {"class": "unitary-result group"}):
         res = soup.find_all("div", {"class": "unitary-result group"})
         data = str(res[0].find_all("strong")[0].text).strip()
-
     return data
 
 def get_from_database(council_name):
@@ -37,5 +37,5 @@ def get_from_database(council_name):
             del council_entry['council']     
     return council_entry
 
-# data_out = get_from_database(get_council_data('RG6 7DD'))
+get_council_data('RG6 7DD')
 # print(data_out)

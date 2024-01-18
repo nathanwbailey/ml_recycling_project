@@ -13,7 +13,7 @@ class RecycleNetwork(torch.nn.Module):
         model_name = 'efficientnet_lite4'
         self.backbone = build_efficientnet_lite(model_name, 1000)
         self.backbone.load_pretrain('./EfficientNet/efficientnet_lite4.pth')
-        self.backbone.fc = torch.nn.Linear(1280, 5)
+        self.backbone.fc = torch.nn.Linear(1280, num_classes)
 
     def forward(self, x):
         return self.backbone(x)

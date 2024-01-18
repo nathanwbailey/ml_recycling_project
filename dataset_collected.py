@@ -22,19 +22,19 @@ class RecyclingDataset(torch.utils.data.Dataset):
             self.names.append(item.attrib['imageName'])
             self.labels.append(int(item.attrib['label']))
             
-        self.mapping = {0:'glass', 1:'metal', 2:'organic', 3:'paper', 4:'plastic'}
+        self.mapping = {0:'glass', 1:'metal', 2: 'organic', 3:'paper', 4:'plastic'}
         
-        valid_num = int(len(self.names)*0.2)
-        test_num = int(len(self.names)*0.2)
+        valid_num = int(len(self.names)*0.5)
+        test_num = int(len(self.names)*0.0)
         train_num = int(len(self.names)- (test_num+valid_num))
         
         self.names, self.labels = shuffle(self.names, self.labels, random_state=20)
-        # if dataset_type == 'train':
-        #     self.names, self.labels = self.names[:train_num], self.labels[:train_num]
-        # elif dataset_type == 'valid':
-        #     self.names, self.labels = self.names[train_num:train_num+valid_num], self.labels[train_num:train_num+valid_num]
-        # else:
-        #     self.names, self.labels = self.names[train_num+valid_num:], self.labels[train_num+valid_num:]
+        if dataset_type == 'train':
+            self.names, self.labels = self.names[:train_num], self.labels[:train_num]
+        elif dataset_type == 'valid':
+            self.names, self.labels = self.names[train_num:train_num+valid_num], self.labels[train_num:train_num+valid_num]
+        else:
+            self.names, self.labels = self.names[train_num+valid_num:], self.labels[train_num+valid_num:]
             
     def __len__(self):
         return len(self.names)
@@ -42,10 +42,11 @@ class RecyclingDataset(torch.utils.data.Dataset):
     def __getitem__(self, idx):
         image_name = self.names[idx]
         label = self.labels[idx]
-        image = Image.open(self.data_dir+'/'+self.mapping[label]+'/'+image_name)
+        image_orig = Image.open(self.data_dir+'/'+self.mapping[label]+'/'+image_name)
+        image_path = self.data_dir+'/'+self.mapping[label]+'/'+image_name
         if self.data_transforms:
-            image = self.data_transforms(image)
-        return (image, label)
+            image = self.data_transforms(image_orig)
+        return (image, label, image_path)
             
         
         
