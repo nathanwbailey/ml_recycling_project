@@ -1,0 +1,261 @@
+----------------------------------------------------------------------------------------------------------------------------
+                                 Parent Layers             Layer (type)         Output Shape         Param #     Tr. Param #
+============================================================================================================================
+               RecycleNetwork/EfficientNetLite                 Conv2d-1      [1, 32, 75, 75]             864             864
+               RecycleNetwork/EfficientNetLite            BatchNorm2d-2      [1, 32, 75, 75]              64              64
+               RecycleNetwork/EfficientNetLite                  ReLU6-3      [1, 32, 75, 75]               0               0
+   RecycleNetwork/EfficientNetLite/MBConvBlock                 Conv2d-4      [1, 32, 75, 75]             288             288
+   RecycleNetwork/EfficientNetLite/MBConvBlock            BatchNorm2d-5      [1, 32, 75, 75]              64              64
+   RecycleNetwork/EfficientNetLite/MBConvBlock                  ReLU6-6      [1, 32, 75, 75]               0               0
+   RecycleNetwork/EfficientNetLite/MBConvBlock                 Conv2d-7      [1, 16, 75, 75]             512             512
+   RecycleNetwork/EfficientNetLite/MBConvBlock            BatchNorm2d-8      [1, 16, 75, 75]              32              32
+   RecycleNetwork/EfficientNetLite/MBConvBlock                 Conv2d-9      [1, 96, 75, 75]           1,536           1,536
+   RecycleNetwork/EfficientNetLite/MBConvBlock           BatchNorm2d-10      [1, 96, 75, 75]             192             192
+   RecycleNetwork/EfficientNetLite/MBConvBlock                 ReLU6-11      [1, 96, 75, 75]               0               0
+   RecycleNetwork/EfficientNetLite/MBConvBlock                Conv2d-12      [1, 96, 38, 38]             864             864
+   RecycleNetwork/EfficientNetLite/MBConvBlock           BatchNorm2d-13      [1, 96, 38, 38]             192             192
+   RecycleNetwork/EfficientNetLite/MBConvBlock                Conv2d-14      [1, 24, 38, 38]           2,304           2,304
+   RecycleNetwork/EfficientNetLite/MBConvBlock           BatchNorm2d-15      [1, 24, 38, 38]              48              48
+   RecycleNetwork/EfficientNetLite/MBConvBlock                Conv2d-16     [1, 144, 38, 38]           3,456           3,456
+   RecycleNetwork/EfficientNetLite/MBConvBlock           BatchNorm2d-17     [1, 144, 38, 38]             288             288
+   RecycleNetwork/EfficientNetLite/MBConvBlock                 ReLU6-18     [1, 144, 38, 38]               0               0
+   RecycleNetwork/EfficientNetLite/MBConvBlock                Conv2d-19     [1, 144, 38, 38]           1,296           1,296
+   RecycleNetwork/EfficientNetLite/MBConvBlock           BatchNorm2d-20     [1, 144, 38, 38]             288             288
+   RecycleNetwork/EfficientNetLite/MBConvBlock                Conv2d-21      [1, 24, 38, 38]           3,456           3,456
+   RecycleNetwork/EfficientNetLite/MBConvBlock           BatchNorm2d-22      [1, 24, 38, 38]              48              48
+   RecycleNetwork/EfficientNetLite/MBConvBlock                Conv2d-23     [1, 144, 38, 38]           3,456           3,456
+   RecycleNetwork/EfficientNetLite/MBConvBlock           BatchNorm2d-24     [1, 144, 38, 38]             288             288
+   RecycleNetwork/EfficientNetLite/MBConvBlock                 ReLU6-25     [1, 144, 38, 38]               0               0
+   RecycleNetwork/EfficientNetLite/MBConvBlock                Conv2d-26     [1, 144, 38, 38]           1,296           1,296
+   RecycleNetwork/EfficientNetLite/MBConvBlock           BatchNorm2d-27     [1, 144, 38, 38]             288             288
+   RecycleNetwork/EfficientNetLite/MBConvBlock                Conv2d-28      [1, 24, 38, 38]           3,456           3,456
+   RecycleNetwork/EfficientNetLite/MBConvBlock           BatchNorm2d-29      [1, 24, 38, 38]              48              48
+   RecycleNetwork/EfficientNetLite/MBConvBlock                Conv2d-30     [1, 144, 38, 38]           3,456           3,456
+   RecycleNetwork/EfficientNetLite/MBConvBlock           BatchNorm2d-31     [1, 144, 38, 38]             288             288
+   RecycleNetwork/EfficientNetLite/MBConvBlock                 ReLU6-32     [1, 144, 38, 38]               0               0
+   RecycleNetwork/EfficientNetLite/MBConvBlock                Conv2d-33     [1, 144, 19, 19]           3,600           3,600
+   RecycleNetwork/EfficientNetLite/MBConvBlock           BatchNorm2d-34     [1, 144, 19, 19]             288             288
+   RecycleNetwork/EfficientNetLite/MBConvBlock                Conv2d-35      [1, 40, 19, 19]           5,760           5,760
+   RecycleNetwork/EfficientNetLite/MBConvBlock           BatchNorm2d-36      [1, 40, 19, 19]              80              80
+   RecycleNetwork/EfficientNetLite/MBConvBlock                Conv2d-37     [1, 240, 19, 19]           9,600           9,600
+   RecycleNetwork/EfficientNetLite/MBConvBlock           BatchNorm2d-38     [1, 240, 19, 19]             480             480
+   RecycleNetwork/EfficientNetLite/MBConvBlock                 ReLU6-39     [1, 240, 19, 19]               0               0
+   RecycleNetwork/EfficientNetLite/MBConvBlock                Conv2d-40     [1, 240, 19, 19]           6,000           6,000
+   RecycleNetwork/EfficientNetLite/MBConvBlock           BatchNorm2d-41     [1, 240, 19, 19]             480             480
+   RecycleNetwork/EfficientNetLite/MBConvBlock                Conv2d-42      [1, 40, 19, 19]           9,600           9,600
+   RecycleNetwork/EfficientNetLite/MBConvBlock           BatchNorm2d-43      [1, 40, 19, 19]              80              80
+   RecycleNetwork/EfficientNetLite/MBConvBlock                Conv2d-44     [1, 240, 19, 19]           9,600           9,600
+   RecycleNetwork/EfficientNetLite/MBConvBlock           BatchNorm2d-45     [1, 240, 19, 19]             480             480
+   RecycleNetwork/EfficientNetLite/MBConvBlock                 ReLU6-46     [1, 240, 19, 19]               0               0
+   RecycleNetwork/EfficientNetLite/MBConvBlock                Conv2d-47     [1, 240, 19, 19]           6,000           6,000
+   RecycleNetwork/EfficientNetLite/MBConvBlock           BatchNorm2d-48     [1, 240, 19, 19]             480             480
+   RecycleNetwork/EfficientNetLite/MBConvBlock                Conv2d-49      [1, 40, 19, 19]           9,600           9,600
+   RecycleNetwork/EfficientNetLite/MBConvBlock           BatchNorm2d-50      [1, 40, 19, 19]              80              80
+   RecycleNetwork/EfficientNetLite/MBConvBlock                Conv2d-51     [1, 240, 19, 19]           9,600           9,600
+   RecycleNetwork/EfficientNetLite/MBConvBlock           BatchNorm2d-52     [1, 240, 19, 19]             480             480
+   RecycleNetwork/EfficientNetLite/MBConvBlock                 ReLU6-53     [1, 240, 19, 19]               0               0
+   RecycleNetwork/EfficientNetLite/MBConvBlock                Conv2d-54     [1, 240, 10, 10]           2,160           2,160
+   RecycleNetwork/EfficientNetLite/MBConvBlock           BatchNorm2d-55     [1, 240, 10, 10]             480             480
+   RecycleNetwork/EfficientNetLite/MBConvBlock                Conv2d-56      [1, 80, 10, 10]          19,200          19,200
+   RecycleNetwork/EfficientNetLite/MBConvBlock           BatchNorm2d-57      [1, 80, 10, 10]             160             160
+   RecycleNetwork/EfficientNetLite/MBConvBlock                Conv2d-58     [1, 480, 10, 10]          38,400          38,400
+   RecycleNetwork/EfficientNetLite/MBConvBlock           BatchNorm2d-59     [1, 480, 10, 10]             960             960
+   RecycleNetwork/EfficientNetLite/MBConvBlock                 ReLU6-60     [1, 480, 10, 10]               0               0
+   RecycleNetwork/EfficientNetLite/MBConvBlock                Conv2d-61     [1, 480, 10, 10]           4,320           4,320
+   RecycleNetwork/EfficientNetLite/MBConvBlock           BatchNorm2d-62     [1, 480, 10, 10]             960             960
+   RecycleNetwork/EfficientNetLite/MBConvBlock                Conv2d-63      [1, 80, 10, 10]          38,400          38,400
+   RecycleNetwork/EfficientNetLite/MBConvBlock           BatchNorm2d-64      [1, 80, 10, 10]             160             160
+   RecycleNetwork/EfficientNetLite/MBConvBlock                Conv2d-65     [1, 480, 10, 10]          38,400          38,400
+   RecycleNetwork/EfficientNetLite/MBConvBlock           BatchNorm2d-66     [1, 480, 10, 10]             960             960
+   RecycleNetwork/EfficientNetLite/MBConvBlock                 ReLU6-67     [1, 480, 10, 10]               0               0
+   RecycleNetwork/EfficientNetLite/MBConvBlock                Conv2d-68     [1, 480, 10, 10]           4,320           4,320
+   RecycleNetwork/EfficientNetLite/MBConvBlock           BatchNorm2d-69     [1, 480, 10, 10]             960             960
+   RecycleNetwork/EfficientNetLite/MBConvBlock                Conv2d-70      [1, 80, 10, 10]          38,400          38,400
+   RecycleNetwork/EfficientNetLite/MBConvBlock           BatchNorm2d-71      [1, 80, 10, 10]             160             160
+   RecycleNetwork/EfficientNetLite/MBConvBlock                Conv2d-72     [1, 480, 10, 10]          38,400          38,400
+   RecycleNetwork/EfficientNetLite/MBConvBlock           BatchNorm2d-73     [1, 480, 10, 10]             960             960
+   RecycleNetwork/EfficientNetLite/MBConvBlock                 ReLU6-74     [1, 480, 10, 10]               0               0
+   RecycleNetwork/EfficientNetLite/MBConvBlock                Conv2d-75     [1, 480, 10, 10]           4,320           4,320
+   RecycleNetwork/EfficientNetLite/MBConvBlock           BatchNorm2d-76     [1, 480, 10, 10]             960             960
+   RecycleNetwork/EfficientNetLite/MBConvBlock                Conv2d-77      [1, 80, 10, 10]          38,400          38,400
+   RecycleNetwork/EfficientNetLite/MBConvBlock           BatchNorm2d-78      [1, 80, 10, 10]             160             160
+   RecycleNetwork/EfficientNetLite/MBConvBlock                Conv2d-79     [1, 480, 10, 10]          38,400          38,400
+   RecycleNetwork/EfficientNetLite/MBConvBlock           BatchNorm2d-80     [1, 480, 10, 10]             960             960
+   RecycleNetwork/EfficientNetLite/MBConvBlock                 ReLU6-81     [1, 480, 10, 10]               0               0
+   RecycleNetwork/EfficientNetLite/MBConvBlock                Conv2d-82     [1, 480, 10, 10]          12,000          12,000
+   RecycleNetwork/EfficientNetLite/MBConvBlock           BatchNorm2d-83     [1, 480, 10, 10]             960             960
+   RecycleNetwork/EfficientNetLite/MBConvBlock                Conv2d-84     [1, 112, 10, 10]          53,760          53,760
+   RecycleNetwork/EfficientNetLite/MBConvBlock           BatchNorm2d-85     [1, 112, 10, 10]             224             224
+   RecycleNetwork/EfficientNetLite/MBConvBlock                Conv2d-86     [1, 672, 10, 10]          75,264          75,264
+   RecycleNetwork/EfficientNetLite/MBConvBlock           BatchNorm2d-87     [1, 672, 10, 10]           1,344           1,344
+   RecycleNetwork/EfficientNetLite/MBConvBlock                 ReLU6-88     [1, 672, 10, 10]               0               0
+   RecycleNetwork/EfficientNetLite/MBConvBlock                Conv2d-89     [1, 672, 10, 10]          16,800          16,800
+   RecycleNetwork/EfficientNetLite/MBConvBlock           BatchNorm2d-90     [1, 672, 10, 10]           1,344           1,344
+   RecycleNetwork/EfficientNetLite/MBConvBlock                Conv2d-91     [1, 112, 10, 10]          75,264          75,264
+   RecycleNetwork/EfficientNetLite/MBConvBlock           BatchNorm2d-92     [1, 112, 10, 10]             224             224
+   RecycleNetwork/EfficientNetLite/MBConvBlock                Conv2d-93     [1, 672, 10, 10]          75,264          75,264
+   RecycleNetwork/EfficientNetLite/MBConvBlock           BatchNorm2d-94     [1, 672, 10, 10]           1,344           1,344
+   RecycleNetwork/EfficientNetLite/MBConvBlock                 ReLU6-95     [1, 672, 10, 10]               0               0
+   RecycleNetwork/EfficientNetLite/MBConvBlock                Conv2d-96     [1, 672, 10, 10]          16,800          16,800
+   RecycleNetwork/EfficientNetLite/MBConvBlock           BatchNorm2d-97     [1, 672, 10, 10]           1,344           1,344
+   RecycleNetwork/EfficientNetLite/MBConvBlock                Conv2d-98     [1, 112, 10, 10]          75,264          75,264
+   RecycleNetwork/EfficientNetLite/MBConvBlock           BatchNorm2d-99     [1, 112, 10, 10]             224             224
+   RecycleNetwork/EfficientNetLite/MBConvBlock               Conv2d-100     [1, 672, 10, 10]          75,264          75,264
+   RecycleNetwork/EfficientNetLite/MBConvBlock          BatchNorm2d-101     [1, 672, 10, 10]           1,344           1,344
+   RecycleNetwork/EfficientNetLite/MBConvBlock                ReLU6-102     [1, 672, 10, 10]               0               0
+   RecycleNetwork/EfficientNetLite/MBConvBlock               Conv2d-103     [1, 672, 10, 10]          16,800          16,800
+   RecycleNetwork/EfficientNetLite/MBConvBlock          BatchNorm2d-104     [1, 672, 10, 10]           1,344           1,344
+   RecycleNetwork/EfficientNetLite/MBConvBlock               Conv2d-105     [1, 112, 10, 10]          75,264          75,264
+   RecycleNetwork/EfficientNetLite/MBConvBlock          BatchNorm2d-106     [1, 112, 10, 10]             224             224
+   RecycleNetwork/EfficientNetLite/MBConvBlock               Conv2d-107     [1, 672, 10, 10]          75,264          75,264
+   RecycleNetwork/EfficientNetLite/MBConvBlock          BatchNorm2d-108     [1, 672, 10, 10]           1,344           1,344
+   RecycleNetwork/EfficientNetLite/MBConvBlock                ReLU6-109     [1, 672, 10, 10]               0               0
+   RecycleNetwork/EfficientNetLite/MBConvBlock               Conv2d-110       [1, 672, 5, 5]          16,800          16,800
+   RecycleNetwork/EfficientNetLite/MBConvBlock          BatchNorm2d-111       [1, 672, 5, 5]           1,344           1,344
+   RecycleNetwork/EfficientNetLite/MBConvBlock               Conv2d-112       [1, 192, 5, 5]         129,024         129,024
+   RecycleNetwork/EfficientNetLite/MBConvBlock          BatchNorm2d-113       [1, 192, 5, 5]             384             384
+   RecycleNetwork/EfficientNetLite/MBConvBlock               Conv2d-114      [1, 1152, 5, 5]         221,184         221,184
+   RecycleNetwork/EfficientNetLite/MBConvBlock          BatchNorm2d-115      [1, 1152, 5, 5]           2,304           2,304
+   RecycleNetwork/EfficientNetLite/MBConvBlock                ReLU6-116      [1, 1152, 5, 5]               0               0
+   RecycleNetwork/EfficientNetLite/MBConvBlock               Conv2d-117      [1, 1152, 5, 5]          28,800          28,800
+   RecycleNetwork/EfficientNetLite/MBConvBlock          BatchNorm2d-118      [1, 1152, 5, 5]           2,304           2,304
+   RecycleNetwork/EfficientNetLite/MBConvBlock               Conv2d-119       [1, 192, 5, 5]         221,184         221,184
+   RecycleNetwork/EfficientNetLite/MBConvBlock          BatchNorm2d-120       [1, 192, 5, 5]             384             384
+   RecycleNetwork/EfficientNetLite/MBConvBlock               Conv2d-121      [1, 1152, 5, 5]         221,184         221,184
+   RecycleNetwork/EfficientNetLite/MBConvBlock          BatchNorm2d-122      [1, 1152, 5, 5]           2,304           2,304
+   RecycleNetwork/EfficientNetLite/MBConvBlock                ReLU6-123      [1, 1152, 5, 5]               0               0
+   RecycleNetwork/EfficientNetLite/MBConvBlock               Conv2d-124      [1, 1152, 5, 5]          28,800          28,800
+   RecycleNetwork/EfficientNetLite/MBConvBlock          BatchNorm2d-125      [1, 1152, 5, 5]           2,304           2,304
+   RecycleNetwork/EfficientNetLite/MBConvBlock               Conv2d-126       [1, 192, 5, 5]         221,184         221,184
+   RecycleNetwork/EfficientNetLite/MBConvBlock          BatchNorm2d-127       [1, 192, 5, 5]             384             384
+   RecycleNetwork/EfficientNetLite/MBConvBlock               Conv2d-128      [1, 1152, 5, 5]         221,184         221,184
+   RecycleNetwork/EfficientNetLite/MBConvBlock          BatchNorm2d-129      [1, 1152, 5, 5]           2,304           2,304
+   RecycleNetwork/EfficientNetLite/MBConvBlock                ReLU6-130      [1, 1152, 5, 5]               0               0
+   RecycleNetwork/EfficientNetLite/MBConvBlock               Conv2d-131      [1, 1152, 5, 5]          28,800          28,800
+   RecycleNetwork/EfficientNetLite/MBConvBlock          BatchNorm2d-132      [1, 1152, 5, 5]           2,304           2,304
+   RecycleNetwork/EfficientNetLite/MBConvBlock               Conv2d-133       [1, 192, 5, 5]         221,184         221,184
+   RecycleNetwork/EfficientNetLite/MBConvBlock          BatchNorm2d-134       [1, 192, 5, 5]             384             384
+   RecycleNetwork/EfficientNetLite/MBConvBlock               Conv2d-135      [1, 1152, 5, 5]         221,184         221,184
+   RecycleNetwork/EfficientNetLite/MBConvBlock          BatchNorm2d-136      [1, 1152, 5, 5]           2,304           2,304
+   RecycleNetwork/EfficientNetLite/MBConvBlock                ReLU6-137      [1, 1152, 5, 5]               0               0
+   RecycleNetwork/EfficientNetLite/MBConvBlock               Conv2d-138      [1, 1152, 5, 5]          28,800          28,800
+   RecycleNetwork/EfficientNetLite/MBConvBlock          BatchNorm2d-139      [1, 1152, 5, 5]           2,304           2,304
+   RecycleNetwork/EfficientNetLite/MBConvBlock               Conv2d-140       [1, 192, 5, 5]         221,184         221,184
+   RecycleNetwork/EfficientNetLite/MBConvBlock          BatchNorm2d-141       [1, 192, 5, 5]             384             384
+   RecycleNetwork/EfficientNetLite/MBConvBlock               Conv2d-142      [1, 1152, 5, 5]         221,184         221,184
+   RecycleNetwork/EfficientNetLite/MBConvBlock          BatchNorm2d-143      [1, 1152, 5, 5]           2,304           2,304
+   RecycleNetwork/EfficientNetLite/MBConvBlock                ReLU6-144      [1, 1152, 5, 5]               0               0
+   RecycleNetwork/EfficientNetLite/MBConvBlock               Conv2d-145      [1, 1152, 5, 5]          10,368          10,368
+   RecycleNetwork/EfficientNetLite/MBConvBlock          BatchNorm2d-146      [1, 1152, 5, 5]           2,304           2,304
+   RecycleNetwork/EfficientNetLite/MBConvBlock               Conv2d-147       [1, 320, 5, 5]         368,640         368,640
+   RecycleNetwork/EfficientNetLite/MBConvBlock          BatchNorm2d-148       [1, 320, 5, 5]             640             640
+               RecycleNetwork/EfficientNetLite               Conv2d-149      [1, 1280, 5, 5]         409,600         409,600
+               RecycleNetwork/EfficientNetLite          BatchNorm2d-150      [1, 1280, 5, 5]           2,560           2,560
+               RecycleNetwork/EfficientNetLite                ReLU6-151      [1, 1280, 5, 5]               0               0
+               RecycleNetwork/EfficientNetLite    AdaptiveAvgPool2d-152      [1, 1280, 1, 1]               0               0
+               RecycleNetwork/EfficientNetLite              Dropout-153            [1, 1280]               0               0
+               RecycleNetwork/EfficientNetLite               Linear-154               [1, 5]           6,405           6,405
+============================================================================================================================
+Total params: 4,142,085
+Trainable params: 4,142,085
+Non-trainable params: 0
+----------------------------------------------------------------------------------------------------------------------------
+tensor([0.6661, 0.6211, 0.5492])
+tensor([0.2871, 0.2917, 0.3310])
+503
+Training Started
+Epoch: 1, Training Loss Classify: 0.839518, Training Loss MSE: 15.389926, Training Loss Total: 16.229444, Validation Loss: 0.462546, Validation Loss MSE: 9.700321, Validation Loss Total: 10.162867, Training Accuracy: 0.672518, Validation Accuracy: 0.842951
+Validation loss decreased (inf --> 10.162867).  Saving model ...
+Epoch: 2, Training Loss Classify: 0.449824, Training Loss MSE: 9.938354, Training Loss Total: 10.388178, Validation Loss: 0.366832, Validation Loss MSE: 9.112214, Validation Loss Total: 9.479046, Training Accuracy: 0.841892, Validation Accuracy: 0.881232
+Validation loss decreased (10.162867 --> 9.479046).  Saving model ...
+Epoch: 3, Training Loss Classify: 0.376743, Training Loss MSE: 8.560909, Training Loss Total: 8.937653, Validation Loss: 0.308764, Validation Loss MSE: 7.412505, Validation Loss Total: 7.721269, Training Accuracy: 0.875257, Validation Accuracy: 0.900654
+Validation loss decreased (9.479046 --> 7.721269).  Saving model ...
+Epoch: 4, Training Loss Classify: 0.339344, Training Loss MSE: 7.855294, Training Loss Total: 8.194638, Validation Loss: 0.287164, Validation Loss MSE: 6.891126, Validation Loss Total: 7.178290, Training Accuracy: 0.892063, Validation Accuracy: 0.909617
+Validation loss decreased (7.721269 --> 7.178290).  Saving model ...
+Epoch: 5, Training Loss Classify: 0.326257, Training Loss MSE: 7.397945, Training Loss Total: 7.724201, Validation Loss: 0.287161, Validation Loss MSE: 7.182839, Validation Loss Total: 7.470001, Training Accuracy: 0.898350, Validation Accuracy: 0.911858
+EarlyStopping counter: 1 out of 10
+Epoch: 6, Training Loss Classify: 0.303321, Training Loss MSE: 6.986904, Training Loss Total: 7.290225, Validation Loss: 0.296174, Validation Loss MSE: 7.236678, Validation Loss Total: 7.532852, Training Accuracy: 0.907625, Validation Accuracy: 0.912605
+EarlyStopping counter: 2 out of 10
+Epoch: 7, Training Loss Classify: 0.282261, Training Loss MSE: 6.590787, Training Loss Total: 6.873048, Validation Loss: 0.282845, Validation Loss MSE: 6.477907, Validation Loss Total: 6.760752, Training Accuracy: 0.917398, Validation Accuracy: 0.916713
+Validation loss decreased (7.178290 --> 6.760752).  Saving model ...
+Epoch: 8, Training Loss Classify: 0.277148, Training Loss MSE: 6.360396, Training Loss Total: 6.637544, Validation Loss: 0.260090, Validation Loss MSE: 6.374590, Validation Loss Total: 6.634680, Training Accuracy: 0.919514, Validation Accuracy: 0.919701
+Validation loss decreased (6.760752 --> 6.634680).  Saving model ...
+Epoch: 9, Training Loss Classify: 0.275225, Training Loss MSE: 6.173126, Training Loss Total: 6.448351, Validation Loss: 0.291336, Validation Loss MSE: 6.960264, Validation Loss Total: 7.251600, Training Accuracy: 0.921320, Validation Accuracy: 0.912605
+EarlyStopping counter: 1 out of 10
+Epoch: 10, Training Loss Classify: 0.260049, Training Loss MSE: 5.920141, Training Loss Total: 6.180190, Validation Loss: 0.281051, Validation Loss MSE: 6.570774, Validation Loss Total: 6.851825, Training Accuracy: 0.927918, Validation Accuracy: 0.918768
+EarlyStopping counter: 2 out of 10
+Epoch: 11, Training Loss Classify: 0.245277, Training Loss MSE: 5.651398, Training Loss Total: 5.896675, Validation Loss: 0.301501, Validation Loss MSE: 7.033567, Validation Loss Total: 7.335068, Training Accuracy: 0.932151, Validation Accuracy: 0.910738
+EarlyStopping counter: 3 out of 10
+Epoch: 12, Training Loss Classify: 0.238268, Training Loss MSE: 5.442740, Training Loss Total: 5.681008, Validation Loss: 0.267851, Validation Loss MSE: 6.017864, Validation Loss Total: 6.285715, Training Accuracy: 0.933458, Validation Accuracy: 0.920635
+Validation loss decreased (6.634680 --> 6.285715).  Saving model ...
+Epoch: 13, Training Loss Classify: 0.239678, Training Loss MSE: 5.351425, Training Loss Total: 5.591103, Validation Loss: 0.323851, Validation Loss MSE: 7.212169, Validation Loss Total: 7.536021, Training Accuracy: 0.935201, Validation Accuracy: 0.905322
+EarlyStopping counter: 1 out of 10
+Epoch: 14, Training Loss Classify: 0.230159, Training Loss MSE: 5.165752, Training Loss Total: 5.395910, Validation Loss: 0.249118, Validation Loss MSE: 5.703599, Validation Loss Total: 5.952717, Training Accuracy: 0.940616, Validation Accuracy: 0.929599
+Validation loss decreased (6.285715 --> 5.952717).  Saving model ...
+Epoch: 15, Training Loss Classify: 0.223381, Training Loss MSE: 4.927559, Training Loss Total: 5.150940, Validation Loss: 0.274476, Validation Loss MSE: 5.864270, Validation Loss Total: 6.138746, Training Accuracy: 0.943044, Validation Accuracy: 0.918207
+EarlyStopping counter: 1 out of 10
+Epoch: 16, Training Loss Classify: 0.221505, Training Loss MSE: 4.911530, Training Loss Total: 5.133035, Validation Loss: 0.276139, Validation Loss MSE: 5.997362, Validation Loss Total: 6.273501, Training Accuracy: 0.943106, Validation Accuracy: 0.924930
+EarlyStopping counter: 2 out of 10
+Epoch: 17, Training Loss Classify: 0.211606, Training Loss MSE: 4.706761, Training Loss Total: 4.918367, Validation Loss: 0.247487, Validation Loss MSE: 5.362598, Validation Loss Total: 5.610085, Training Accuracy: 0.946592, Validation Accuracy: 0.930532
+Validation loss decreased (5.952717 --> 5.610085).  Saving model ...
+Epoch: 18, Training Loss Classify: 0.211057, Training Loss MSE: 4.547003, Training Loss Total: 4.758060, Validation Loss: 0.263163, Validation Loss MSE: 5.430462, Validation Loss Total: 5.693624, Training Accuracy: 0.947401, Validation Accuracy: 0.929972
+EarlyStopping counter: 1 out of 10
+Epoch: 19, Training Loss Classify: 0.206076, Training Loss MSE: 4.448298, Training Loss Total: 4.654374, Validation Loss: 0.229301, Validation Loss MSE: 4.680844, Validation Loss Total: 4.910144, Training Accuracy: 0.949704, Validation Accuracy: 0.937815
+Validation loss decreased (5.610085 --> 4.910144).  Saving model ...
+Epoch: 20, Training Loss Classify: 0.202709, Training Loss MSE: 4.345229, Training Loss Total: 4.547938, Validation Loss: 0.272230, Validation Loss MSE: 5.636752, Validation Loss Total: 5.908982, Training Accuracy: 0.951758, Validation Accuracy: 0.918768
+EarlyStopping counter: 1 out of 10
+Epoch: 21, Training Loss Classify: 0.197647, Training Loss MSE: 4.262409, Training Loss Total: 4.460056, Validation Loss: 0.232846, Validation Loss MSE: 4.558930, Validation Loss Total: 4.791776, Training Accuracy: 0.952256, Validation Accuracy: 0.936134
+Validation loss decreased (4.910144 --> 4.791776).  Saving model ...
+Epoch: 22, Training Loss Classify: 0.190813, Training Loss MSE: 4.117875, Training Loss Total: 4.308688, Validation Loss: 0.295655, Validation Loss MSE: 5.851192, Validation Loss Total: 6.146848, Training Accuracy: 0.955867, Validation Accuracy: 0.915033
+EarlyStopping counter: 1 out of 10
+Epoch: 23, Training Loss Classify: 0.197308, Training Loss MSE: 4.067901, Training Loss Total: 4.265209, Validation Loss: 0.318601, Validation Loss MSE: 6.314825, Validation Loss Total: 6.633425, Training Accuracy: 0.955431, Validation Accuracy: 0.904388
+EarlyStopping counter: 2 out of 10
+Epoch: 24, Training Loss Classify: 0.189374, Training Loss MSE: 3.941208, Training Loss Total: 4.130582, Validation Loss: 0.235027, Validation Loss MSE: 4.473312, Validation Loss Total: 4.708339, Training Accuracy: 0.958108, Validation Accuracy: 0.934641
+Validation loss decreased (4.791776 --> 4.708339).  Saving model ...
+Epoch: 25, Training Loss Classify: 0.190004, Training Loss MSE: 3.879069, Training Loss Total: 4.069072, Validation Loss: 0.243927, Validation Loss MSE: 4.623324, Validation Loss Total: 4.867251, Training Accuracy: 0.956863, Validation Accuracy: 0.936508
+EarlyStopping counter: 1 out of 10
+Epoch: 26, Training Loss Classify: 0.186523, Training Loss MSE: 3.772398, Training Loss Total: 3.958921, Validation Loss: 0.242943, Validation Loss MSE: 4.466317, Validation Loss Total: 4.709260, Training Accuracy: 0.959851, Validation Accuracy: 0.933147
+EarlyStopping counter: 2 out of 10
+Epoch: 27, Training Loss Classify: 0.187086, Training Loss MSE: 3.750292, Training Loss Total: 3.937378, Validation Loss: 0.239512, Validation Loss MSE: 4.740289, Validation Loss Total: 4.979801, Training Accuracy: 0.959166, Validation Accuracy: 0.937442
+EarlyStopping counter: 3 out of 10
+Epoch: 28, Training Loss Classify: 0.178464, Training Loss MSE: 3.624739, Training Loss Total: 3.803203, Validation Loss: 0.244816, Validation Loss MSE: 4.626211, Validation Loss Total: 4.871028, Training Accuracy: 0.961096, Validation Accuracy: 0.934080
+Epoch 00028: reducing learning rate of group 0 to 1.0000e-05.
+EarlyStopping counter: 4 out of 10
+Epoch: 29, Training Loss Classify: 0.170210, Training Loss MSE: 3.398104, Training Loss Total: 3.568313, Validation Loss: 0.205449, Validation Loss MSE: 4.047315, Validation Loss Total: 4.252764, Training Accuracy: 0.964083, Validation Accuracy: 0.945472
+Validation loss decreased (4.708339 --> 4.252764).  Saving model ...
+Epoch: 30, Training Loss Classify: 0.168904, Training Loss MSE: 3.356390, Training Loss Total: 3.525294, Validation Loss: 0.206202, Validation Loss MSE: 3.996000, Validation Loss Total: 4.202201, Training Accuracy: 0.965515, Validation Accuracy: 0.946032
+Validation loss decreased (4.252764 --> 4.202201).  Saving model ...
+Epoch: 31, Training Loss Classify: 0.170572, Training Loss MSE: 3.293473, Training Loss Total: 3.464045, Validation Loss: 0.206042, Validation Loss MSE: 3.981337, Validation Loss Total: 4.187379, Training Accuracy: 0.964083, Validation Accuracy: 0.945285
+Validation loss decreased (4.202201 --> 4.187379).  Saving model ...
+Epoch: 32, Training Loss Classify: 0.167916, Training Loss MSE: 3.250715, Training Loss Total: 3.418631, Validation Loss: 0.206061, Validation Loss MSE: 3.982066, Validation Loss Total: 4.188128, Training Accuracy: 0.966449, Validation Accuracy: 0.944911
+EarlyStopping counter: 1 out of 10
+Epoch: 33, Training Loss Classify: 0.170064, Training Loss MSE: 3.232957, Training Loss Total: 3.403021, Validation Loss: 0.207942, Validation Loss MSE: 3.940315, Validation Loss Total: 4.148258, Training Accuracy: 0.968316, Validation Accuracy: 0.943978
+Validation loss decreased (4.187379 --> 4.148258).  Saving model ...
+Epoch: 34, Training Loss Classify: 0.173163, Training Loss MSE: 3.236314, Training Loss Total: 3.409476, Validation Loss: 0.206794, Validation Loss MSE: 3.952757, Validation Loss Total: 4.159551, Training Accuracy: 0.965702, Validation Accuracy: 0.944351
+EarlyStopping counter: 1 out of 10
+Epoch: 35, Training Loss Classify: 0.169917, Training Loss MSE: 3.161246, Training Loss Total: 3.331162, Validation Loss: 0.205418, Validation Loss MSE: 3.918454, Validation Loss Total: 4.123872, Training Accuracy: 0.966636, Validation Accuracy: 0.947899
+Validation loss decreased (4.148258 --> 4.123872).  Saving model ...
+Epoch: 36, Training Loss Classify: 0.167435, Training Loss MSE: 3.205673, Training Loss Total: 3.373108, Validation Loss: 0.204903, Validation Loss MSE: 3.928288, Validation Loss Total: 4.133191, Training Accuracy: 0.966573, Validation Accuracy: 0.945098
+EarlyStopping counter: 1 out of 10
+Epoch: 37, Training Loss Classify: 0.168245, Training Loss MSE: 3.117541, Training Loss Total: 3.285786, Validation Loss: 0.206026, Validation Loss MSE: 3.928406, Validation Loss Total: 4.134432, Training Accuracy: 0.968316, Validation Accuracy: 0.946218
+EarlyStopping counter: 2 out of 10
+Epoch: 38, Training Loss Classify: 0.168310, Training Loss MSE: 3.120615, Training Loss Total: 3.288925, Validation Loss: 0.206663, Validation Loss MSE: 3.922267, Validation Loss Total: 4.128930, Training Accuracy: 0.969499, Validation Accuracy: 0.945472
+EarlyStopping counter: 3 out of 10
+Epoch: 39, Training Loss Classify: 0.163552, Training Loss MSE: 3.098689, Training Loss Total: 3.262241, Validation Loss: 0.207936, Validation Loss MSE: 3.954184, Validation Loss Total: 4.162120, Training Accuracy: 0.969499, Validation Accuracy: 0.943791
+Epoch 00039: reducing learning rate of group 0 to 1.0000e-06.
+EarlyStopping counter: 4 out of 10
+Epoch: 40, Training Loss Classify: 0.163932, Training Loss MSE: 3.079549, Training Loss Total: 3.243481, Validation Loss: 0.204756, Validation Loss MSE: 3.947882, Validation Loss Total: 4.152638, Training Accuracy: 0.968690, Validation Accuracy: 0.944725
+EarlyStopping counter: 5 out of 10
+Epoch: 41, Training Loss Classify: 0.166723, Training Loss MSE: 3.094434, Training Loss Total: 3.261157, Validation Loss: 0.205041, Validation Loss MSE: 3.959246, Validation Loss Total: 4.164287, Training Accuracy: 0.965826, Validation Accuracy: 0.944911
+EarlyStopping counter: 6 out of 10
+Epoch: 42, Training Loss Classify: 0.168890, Training Loss MSE: 3.105935, Training Loss Total: 3.274825, Validation Loss: 0.204499, Validation Loss MSE: 3.942911, Validation Loss Total: 4.147411, Training Accuracy: 0.966822, Validation Accuracy: 0.943978
+EarlyStopping counter: 7 out of 10
+Epoch: 43, Training Loss Classify: 0.162340, Training Loss MSE: 3.065167, Training Loss Total: 3.227507, Validation Loss: 0.205403, Validation Loss MSE: 3.927985, Validation Loss Total: 4.133388, Training Accuracy: 0.968067, Validation Accuracy: 0.945098
+Epoch 00043: reducing learning rate of group 0 to 1.0000e-07.
+EarlyStopping counter: 8 out of 10
+Epoch: 44, Training Loss Classify: 0.167673, Training Loss MSE: 3.077608, Training Loss Total: 3.245282, Validation Loss: 0.204414, Validation Loss MSE: 3.954299, Validation Loss Total: 4.158713, Training Accuracy: 0.968005, Validation Accuracy: 0.944538
+EarlyStopping counter: 9 out of 10
+Epoch: 45, Training Loss Classify: 0.169013, Training Loss MSE: 3.087228, Training Loss Total: 3.256241, Validation Loss: 0.204013, Validation Loss MSE: 3.955490, Validation Loss Total: 4.159503, Training Accuracy: 0.966760, Validation Accuracy: 0.943978
+EarlyStopping counter: 10 out of 10
+Early Stopping at Epoch: 45
+Test Loss: 0.199638, Test Accuracy: 0.9486
