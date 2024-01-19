@@ -2,7 +2,7 @@
 
 ### What is this branch?
 
-This branch implements APoZ pruning of the classification network implemented in the main branch. For more inforamtion on this pruning method can be found here: https://arxiv.org/abs/1607.03250
+This branch implements APoZ pruning of the classification network implemented in the main branch. More information on this pruning method can be found here: https://arxiv.org/abs/1607.03250
 
 I also wrote a blog on pruning techniques which can be found here: https://nathanbaileyw.medium.com/machine-learning-recycling-project-part-2-research-383602941b70
 
