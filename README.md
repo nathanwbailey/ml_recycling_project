@@ -15,7 +15,7 @@ In addition to creating the CNN, this project also attempts to try out various o
 * An initial model has been trained that achieves 90%+ accuracy
 * This model has been integrated into a larger system such that an object can be detected and passed to this CNN from a video feed for classification
 * Optimisation methods have been attempted. Including L1 Pruning, Taylor Pruning, APoZ Pruning and Teacher-Student Methods.
-    * The code for these optimisation methods can be found in relevant branches.
+    * The code for these optimisation methods can be found in the relevant branches.
 * An original dataset is in the process of being collected so that the edge system can be deployed and tested in a recycling bin
 
 ### Blogs
