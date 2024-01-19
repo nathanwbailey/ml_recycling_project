@@ -2,7 +2,7 @@
 
 ### What is this branch?
 
-This branch implements Teacher-Student methods with the classification network implemented in the main branch. For more inforamtion on this optimisation method can be found here: https://arxiv.org/abs/1312.6184, https://arxiv.org/abs/1503.02531
+This branch implements Teacher-Student methods with the classification network implemented in the main branch. More information on this optimisation method can be found here: https://arxiv.org/abs/1312.6184, https://arxiv.org/abs/1503.02531
 
 I also wrote a blog on this method which can be found here: https://nathanbaileyw.medium.com/machine-learning-recycling-project-part-2-research-383602941b70
 
