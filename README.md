@@ -2,7 +2,7 @@
 
 ### What is this branch?
 
-This branch implements Taylor pruning of the classification network implemented in the main branch. For more inforamtion on this pruning method can be found here: https://arxiv.org/abs/1611.06440, https://jacobgil.github.io/deeplearning/pruning-deep-learning
+This branch implements Taylor pruning of the classification network implemented in the main branch. More information on this pruning method can be found here: https://arxiv.org/abs/1611.06440, https://jacobgil.github.io/deeplearning/pruning-deep-learning
 
 I also wrote a blog on pruning techniques which can be found here: https://nathanbaileyw.medium.com/machine-learning-recycling-project-part-2-research-383602941b70
 
