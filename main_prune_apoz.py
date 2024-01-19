@@ -3,7 +3,6 @@ import torchvision
 import sys
 import dataset
 import network_apoz
-import network
 import dataset_apoz
 import train_test
 import torch_pruning as pruning
